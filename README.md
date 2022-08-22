@@ -27,3 +27,21 @@ What was not efficient?
 I’m sure that when implementing my display function and my remove_all_source function, when I had to potentially traverse through the list until I found a match, I could have made small adjustments to improve the efficiency of the traversal through the list. 
 What would you do differently if you had more time to solve the problem?
 I realized that I probably could have called my retrieve function inside my display function, to find the term to display (instead of finding the term and displaying it within display, like how i implemented it). This would have made display more basic and easy to re-use, and would have put the retrieve function to better use. 
+
+
+EFFICIENCY WRITE UP
+
+How well did the data structure selected perform for the assigned application?
+Overall, with the knowledge I currently have, I think that using a linear linked list, each pointing to another linear linked list works well with the objective of the program. It makes sense structurally. And unlike if we were using arrays, we have the ability to continue to add on new types of pizza. And add on to each specific pizza as many topping we wanted. I think this is really convenient for the scope of what this assignment was trying to do. If they had been limited the amount of toppings they could add to said pizza, it would really defeat the purpose of what this program was trying to do. Which was to help a user to create a list of they prefered pizza types with their prefered pizza toppings. 
+Would a different data structure work better? If so, which one and why…
+If this were a LLL of arrays instead, we would be limited the amount of topping we could add to a certain pizza. However It could definitely improve our efficiency being able to use pointer arithmetic. And we could always resolve the issue of memory by asking the user beforehand how many topping types they would have liked on a pizza. (although this method is less user friendly and convenient for the user.  
+What was efficient about your design and use of the data structure?
+I tried my best to minimize the amount of traversing I had to do. 
+I also created a few general functions (like FIND, and functions to get get a pizza_types / pizza_topping from the user) that I was able to call multiple times. This saved a lot of time when building my program, and make it easier for my to test my code.
+ What was not efficient?
+In general, I could have probably done a better job of minimizing the amount of fetches/operations I had. Im sure the user interface part of my program could have been better. 
+The data structure itself requires a lot of traversing through both lists of nodes. And although I made an attempt, Im sure my program could have done a better job avoiding traversing.
+What would you do differently if you had more time to solve the problem?
+Initially I wanted to be able to create my program to tell if a pizza_type or pizza_topping being passed in to add had already been added to the list. ALthough I think I was close, I had troubles getting it to work without it messing with my sorting algorithm, or having to traverse again separately just to tell if it was.
+I also saw the repetition in many of the functions, with the only difference being which struct was being dealt with ( pizza_type, or pizza_topping). I think It would have been convenient to find a way to only have to create ONE function for all FIND, SORT, and DISPLAY, and just change which struct type was being used. However I foresaw many problems, such as how I would save the value of pizza_type (current) from FIND before moving onto a dealing with a specific topping from that pizza. I also was unsure of how I would go about being able to make the variables of these functions abstract enough that I would be able to change the struct type.
+In general I think that my program could have been developed to be more ‘user friendly’. As it is it asks some fairly general questions (in order for me to able to re use some functions). However Im sure it would be better for the user If my program did a better job specifying what was needed, or in general asking questions more specific to what It was dealing with. 
